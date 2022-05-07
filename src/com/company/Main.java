@@ -130,12 +130,14 @@ public class Main {
 
     }
 
-    public static void search() {
+    public static void search() throws InterruptedException {
         int i;
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter the number of the person you want to find");
         i = keyboard.nextInt();
         System.out.println(PersonalInformation.getPersonByNumber(i).getName());
+        Thread.sleep(2000);
+
 
     }
 
