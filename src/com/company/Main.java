@@ -111,7 +111,7 @@ public class Main {
         System.out.print("how old are you ?\n");
         Age = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("Type your  national code:\n");
+        System.out.print("Type your  national code without 0 in the beginning:\n");
         nationalCode = Integer.parseInt(keyboard.nextLine());
 
         PersonalInformation ali = new PersonalInformation(Name, Address, Age, nationalCode);
@@ -133,7 +133,7 @@ public class Main {
     public static void search() throws InterruptedException {
         int i;
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Enter the number of the person you want to find");
+        System.out.println("Enter a national code without a 0 in the beginning:");
         i = keyboard.nextInt();
         System.out.println(PersonalInformation.getPersonByNumber(i).getName());
         Thread.sleep(2000);
@@ -167,29 +167,34 @@ public class Main {
     public static void vacationConfirm() throws ParseException, InterruptedException {
         Scanner keyboard = new Scanner(System.in);
         String name;
-        int i;
+        int i = 0;
 
         System.out.println("enter:\n a.  all vacations\n b.  confirmed vacations\n c.  unconfirmed vacations\n");
         String key = keyboard.nextLine();
 
         if (key.equalsIgnoreCase("a")) {
             Vacation.printAllVacations();
-        } else if (key.equalsIgnoreCase("b"))
+        }
+        if (key.equalsIgnoreCase("b")) {
             Vacation.printConfirmedVacations();
-        System.out.println("access editing clicking 1 ");
-        i = keyboard.nextInt();
-        if (i == 1) {
-            Vacation.changeConfirmedVacation();
-        } else if (key.equalsIgnoreCase("c")) {
-            Vacation.printUnconfirmedVacations();
             System.out.println("access editing clicking 1 ");
             i = keyboard.nextInt();
+        }
+        if (i == 1) {
+            Vacation.changeConfirmedVacation();
+        }
+         if (key.equalsIgnoreCase("c")) {
+             Vacation.printUnconfirmedVacations();
+             System.out.println("access editing clicking 1 ");
+             i = keyboard.nextInt();
+         }
             if (i == 1) {
                 Vacation.changeUnconfirmedVacation();
             }
+            else vacationConfirm();
 
 
         }
 
     }
-}
+

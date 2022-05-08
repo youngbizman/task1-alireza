@@ -122,7 +122,7 @@ public class Vacation {
        System.out.println("Whose vacation do you wanna confirmed?");
        name = keyboard.nextLine();
        Vacation.getVacationByName(name).setRequestConfirm(true);
-       System.out.println(Vacation.getVacationByName(name) + "'s vacation has been successfully  confirmed");
+       System.out.println(PersonalInformation.getPersonByName(name) + "'s vacation has been successfully  confirmed");
    }
     public static void changeUnconfirmedVacation() {
         Scanner keyboard = new Scanner(System.in);
@@ -130,7 +130,7 @@ public class Vacation {
         String name;
         name = keyboard.nextLine();
         Vacation.getVacationByName(name).setRequestConfirm(false);
-        System.out.println(Vacation.getVacationByName(name) + "'s vacation has been successfully  unconfirmed");
+        System.out.println(PersonalInformation.getPersonByName(name) + "'s vacation has been successfully  unconfirmed");
     }
 
 
