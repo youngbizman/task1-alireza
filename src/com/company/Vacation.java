@@ -87,7 +87,6 @@ public class Vacation {
 
     }
     public static void printConfirmedVacations() throws InterruptedException {
-        Scanner keyboard = new Scanner(System.in);
 
         int i ;
         for ( i = 0 ; i <vacations.size(); i++)
@@ -97,11 +96,11 @@ public class Vacation {
             System.out.println(vacations.get(i).getPersonalInformation().getName()+"'s vacation");
             System.out.println("starting from "+vacations.get(i).getBeginningDate());
             System.out.println("until "+vacations.get(i).getEndingDate());
-         }
+            Thread.sleep(2000);
+        }
         }
     }
     public static void printUnconfirmedVacations() throws InterruptedException {
-        Scanner keyboard = new Scanner(System.in);
 
         int i ;
         for ( i = 0 ; i <vacations.size(); i++)
@@ -118,11 +117,11 @@ public class Vacation {
     }
    public static void changeConfirmedVacation() {
        Scanner keyboard = new Scanner(System.in);
-       String name;
        System.out.println("Whose vacation do you wanna confirmed?");
+       String name;
        name = keyboard.nextLine();
        Vacation.getVacationByName(name).setRequestConfirm(true);
-       System.out.println(PersonalInformation.getPersonByName(name) + "'s vacation has been successfully  confirmed");
+       System.out.println(PersonalInformation.getPersonByName(name).getName() + "'s vacation has been successfully  confirmed");
    }
     public static void changeUnconfirmedVacation() {
         Scanner keyboard = new Scanner(System.in);
@@ -130,7 +129,7 @@ public class Vacation {
         String name;
         name = keyboard.nextLine();
         Vacation.getVacationByName(name).setRequestConfirm(false);
-        System.out.println(PersonalInformation.getPersonByName(name) + "'s vacation has been successfully  unconfirmed");
+        System.out.println(PersonalInformation.getPersonByName(name).getName()+ "'s vacation has been successfully  unconfirmed");
     }
 
 

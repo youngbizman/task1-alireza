@@ -179,18 +179,18 @@ public class Main {
             Vacation.printConfirmedVacations();
             System.out.println("access editing clicking 1 ");
             i = keyboard.nextInt();
-        }
-        if (i == 1) {
-            Vacation.changeConfirmedVacation();
+        if (i == 1) Vacation.changeUnconfirmedVacation();
+
         }
          if (key.equalsIgnoreCase("c")) {
              Vacation.printUnconfirmedVacations();
              System.out.println("access editing clicking 1 ");
              i = keyboard.nextInt();
+             if (i == 1) {
+                 Vacation.changeConfirmedVacation();
+             }
          }
-            if (i == 1) {
-                Vacation.changeUnconfirmedVacation();
-            }
+
             else vacationConfirm();
 
 
