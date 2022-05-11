@@ -1,6 +1,7 @@
 package Entity;
 
 import Service.PersonalInformationBusiness;
+import Service.VacationBusiness;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -171,21 +172,21 @@ public class Main {
         String key = keyboard.nextLine();
 
         if (key.equalsIgnoreCase("a")) {
-            Vacation.printAllVacations();
+            VacationBusiness.printAllVacations();
         }
         if (key.equalsIgnoreCase("b")) {
-            Vacation.printConfirmedVacations();
+            VacationBusiness.printConfirmedVacations();
             System.out.println("access editing clicking 1 ");
             i = keyboard.nextInt();
-        if (i == 1) Vacation.changeUnconfirmedVacation();
+        if (i == 1) VacationBusiness.changeUnconfirmedVacation();
 
         }
          if (key.equalsIgnoreCase("c")) {
-             Vacation.printUnconfirmedVacations();
+             VacationBusiness.printUnconfirmedVacations();
              System.out.println("access editing clicking 1 ");
              i = keyboard.nextInt();
              if (i == 1) {
-                 Vacation.changeConfirmedVacation();
+                 VacationBusiness.changeConfirmedVacation();
              }
          }
 
