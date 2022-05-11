@@ -1,12 +1,10 @@
-package com.company;
+package Entity;
+
+import Service.PersonalInformationBusiness;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Date;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.text.*;
-import java.util.Date;
 
 
 enum MenuOptions
@@ -135,7 +133,7 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter a national code without a 0 in the beginning:");
         i = keyboard.nextInt();
-        System.out.println(PersonalInformation.getPersonByNumber(i).getName());
+        System.out.println(PersonalInformationBusiness.getPersonByNumber(i).getName());
         Thread.sleep(2000);
 
 
@@ -149,12 +147,12 @@ public class Main {
         int confirm;
         System.out.println("please enter your name");
         name = keyboard.nextLine();
-        System.out.println("" + PersonalInformation.getPersonByName(name).getName() + " you have been successfully logged in");
+        System.out.println("" + PersonalInformationBusiness.getPersonByName(name).getName() + " you have been successfully logged in");
         System.out.println("please enter your Vacation's beginning time in yyyy-mm-dd format");
         beginning = keyboard.nextLine();
         System.out.println("please enter your Vacation's ending time in yyyy-mm-dd format");
         ending = keyboard.nextLine();
-        Vacation vacation = new Vacation(beginning, ending, PersonalInformation.getPersonByName(name));
+        Vacation vacation = new Vacation(beginning, ending, PersonalInformationBusiness.getPersonByName(name));
         System.out.println("you want a " + vacation.getDifference() + " days vacation from "
                 + vacation.getBeginningDate() + " until " + vacation.getEndingDate() + "\n" + " confirm entering 1 ");
         confirm = keyboard.nextInt();

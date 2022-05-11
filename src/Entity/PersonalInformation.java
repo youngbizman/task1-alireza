@@ -1,6 +1,5 @@
-package com.company;
+package Entity;
 
-import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +19,7 @@ public class PersonalInformation {
     }
 
     public static List<PersonalInformation> persons = new ArrayList();
+
 
 
     public String getName() {
@@ -48,29 +48,5 @@ public class PersonalInformation {
         return nationalCode;
     }
 
-    public static PersonalInformation getPersonByNumber(int q) {
-        int i;
 
-        for (i = 0; i < PersonalInformation.persons.size(); i++) {
-            if (PersonalInformation.persons.get(i).getNationalCode() == q)
-            {
-                return persons.get(i);
-            }
-        }
-        return null;
-    }
-
-        public static PersonalInformation getPersonByName(String q) {
-            int i;
-
-            for (i = 0; i < PersonalInformation.persons.size(); i++) {
-                if (PersonalInformation.persons.get(i).getName().equals(q))
-                {
-                    return persons.get(i);
-                }
-            }
-
-
-        return null;
-    }
 }

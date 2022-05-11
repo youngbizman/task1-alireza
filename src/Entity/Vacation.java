@@ -1,4 +1,6 @@
-package com.company;
+package Entity;
+import Service.PersonalInformationBusiness;
+
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -121,7 +123,7 @@ public class Vacation {
        String name;
        name = keyboard.nextLine();
        Vacation.getVacationByName(name).setRequestConfirm(true);
-       System.out.println(PersonalInformation.getPersonByName(name).getName() + "'s vacation has been successfully  confirmed");
+       System.out.println(PersonalInformationBusiness.getPersonByName(name).getName() + "'s vacation has been successfully  confirmed");
    }
     public static void changeUnconfirmedVacation() {
         Scanner keyboard = new Scanner(System.in);
@@ -129,7 +131,7 @@ public class Vacation {
         String name;
         name = keyboard.nextLine();
         Vacation.getVacationByName(name).setRequestConfirm(false);
-        System.out.println(PersonalInformation.getPersonByName(name).getName()+ "'s vacation has been successfully  unconfirmed");
+        System.out.println(PersonalInformationBusiness.getPersonByName(name).getName()+ "'s vacation has been successfully  unconfirmed");
     }
 
 
