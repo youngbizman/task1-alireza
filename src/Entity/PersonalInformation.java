@@ -9,7 +9,7 @@ public class PersonalInformation {
     private int age;
     private int nationalCode;
 
-    PersonalInformation(String Name, String Address, int Age, int nationalCode) {
+   public PersonalInformation(String Name, String Address, int Age, int nationalCode) {
         name = Name;
         address = Address;
         age = Age;
@@ -47,6 +47,7 @@ public class PersonalInformation {
 
         return nationalCode;
     }
+
 
 
 }

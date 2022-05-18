@@ -1,5 +1,12 @@
-package Entity;
+package View;
+import Entity.*;
+import Service.*;
+import DAO.*;
 
+
+
+import Entity.PersonalInformation;
+import Entity.Vacation;
 import Service.PersonalInformationBusiness;
 import Service.VacationBusiness;
 
@@ -113,7 +120,7 @@ public class Main {
         System.out.print("Type your  national code without 0 in the beginning:\n");
         nationalCode = Integer.parseInt(keyboard.nextLine());
 
-        PersonalInformation ali = new PersonalInformation(Name, Address, Age, nationalCode);
+        PersonalInformation ali = new PersonalInformation (Name, Address, Age, nationalCode);
         for (int i = 1; i <= 1; i++) {
             System.out.println("Your name is " + ali.getName());
             System.out.println("Your address is " + ali.getAddress());

@@ -49,25 +49,17 @@ public class DBHandler {
         DBHandler dbHandler = new DBHandler();
         dbHandler.openConnection();
         Statement st = conn.createStatement();
-        st.execute("CREATE TABLE IF NOT EXISTS personalInformation5 (\n" +
+        st.execute("CREATE TABLE IF NOT EXISTS personalInformation (\n" +
                 "     ID int AUTO_INCREMENT PRIMARY KEY,\n" +
                         "    Name varchar(255),\n" +
                         "    Age int,\n" +
                         "    NationalCode varchar(255),\n" +
                         "    HasVacation boolean \n" +
                         ");");
-        String sql = "INSERT INTO personalInformation5 " + "VALUES (100, 'Zara', 11, 18, true)";
-
+        String sql = "INSERT INTO   personalInformation VALUES (18011, 'Zara', 18110, 1810, true)";
         st.executeUpdate(sql);
-      //  sql = "INSERT INTO personalInformation5 " + "VALUES (101, 'Mahnaz', 'Fatma', 25)";
+        Thread.sleep(2000);
 
-      //  st.executeUpdate(sql);
-      //  sql = "INSERT INTO personalInformation5 " + "VALUES (102, 'Zaid', 'Khan', 30)";
-
-      //  st.executeUpdate(sql);
-      //  sql = "INSERT INTO personalInformation5 " + "VALUES(103, 'Sumit', 'Mittal', 28)";
-
-      //  st.executeUpdate(sql);
         System.out.println("Inserted records into the table...");
         dbHandler.closeConnection();
     }
