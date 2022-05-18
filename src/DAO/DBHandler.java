@@ -1,4 +1,4 @@
-package Entity;
+package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -32,8 +32,6 @@ public class DBHandler {
         }
     }
 
-
-
     public void closeConnection() {
         try {
             if (conn != null && !conn.isClosed()) {
@@ -44,7 +42,6 @@ public class DBHandler {
             System.out.println("Failed to close");
         }
     }
-
     public static void main(String[] args) throws InterruptedException, SQLException {
         DBHandler dbHandler = new DBHandler();
         dbHandler.openConnection();
@@ -59,11 +56,9 @@ public class DBHandler {
         String sql = "INSERT INTO   personalInformation VALUES (18011, 'Zara', 18110, 1810, true)";
         st.executeUpdate(sql);
         Thread.sleep(2000);
-
         System.out.println("Inserted records into the table...");
         dbHandler.closeConnection();
     }
-
 }
 
 
