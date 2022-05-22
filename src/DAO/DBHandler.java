@@ -21,15 +21,17 @@ public class DBHandler {
         }
     }
 
-    public void openConnection() {
+    public Connection openConnection() {
         try {
             if (conn == null || conn.isClosed()) {
                 conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
                 System.out.println("Connection OK.");
+                return conn;
             }
         } catch (SQLException e) {
             System.out.println("Connection fails.");
         }
+        return null;
     }
 
     public void closeConnection() {
@@ -53,10 +55,7 @@ public class DBHandler {
                         "    NationalCode varchar(255),\n" +
                         "    HasVacation boolean \n" +
                         ");");
-        String sql = "INSERT INTO   personalInformation VALUES (18011, 'Zara', 18110, 1810, true)";
-        st.executeUpdate(sql);
-        Thread.sleep(2000);
-        System.out.println("Inserted records into the table...");
+
         dbHandler.closeConnection();
     }
 }

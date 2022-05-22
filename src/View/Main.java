@@ -120,18 +120,20 @@ public class Main {
         System.out.print("Type your  national code without 0 in the beginning:\n");
         nationalCode = Integer.parseInt(keyboard.nextLine());
 
-        PersonalInformation ali = new PersonalInformation (Name, Address, Age, nationalCode);
+        PersonalInformation personalInformation = new PersonalInformation (Name, Address, Age, nationalCode);
         for (int i = 1; i <= 1; i++) {
-            System.out.println("Your name is " + ali.getName());
-            System.out.println("Your address is " + ali.getAddress());
-            System.out.println("Your age is " + ali.getAge());
-            System.out.println("Your national code " + ali.getNationalCode());
+            System.out.println("Your name is " + personalInformation.getName());
+            System.out.println("Your address is " + personalInformation.getAddress());
+            System.out.println("Your age is " + personalInformation.getAge());
+            System.out.println("Your national code " + personalInformation.getNationalCode());
         }
         System.out.print("please confirm your information entering 1\n");
         Confirm = keyboard.nextInt();
         if (Confirm == 1) {
             System.out.println("personal creation successfully done\n");
             Thread.sleep(2000);
+            PersonalInformationBusiness personalInformationBusiness = new PersonalInformationBusiness();
+            personalInformationBusiness.CreatePersonalInformation(personalInformation);
         }
 
     }
